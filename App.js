@@ -1,13 +1,14 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, View, StatusBar, LogBox, Text } from 'react-native';
+import { StyleSheet, View, StatusBar, LogBox } from 'react-native';
 LogBox.ignoreLogs(['Reanimated 2']);
+import NavigationStack from './src/navigation/NavigationStack';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle='default' />
-      <Text>Hi!</Text>
+      <NavigationStack />
     </View>
   );
 };

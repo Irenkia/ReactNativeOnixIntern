@@ -2,8 +2,18 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+
         alignItems: 'center',
-        backgroundColor: '#2c3e50'
+        backgroundColor: 'silver'
+    },
+    img: {
+        width: 155,
+        height: 125,
+        marginTop: 35,
+        resizeMode: 'stretch'
+    },
+    descriptions: {
+        color: 'black',
+        fontSize: 21
     }
 });
