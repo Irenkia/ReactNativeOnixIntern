@@ -2,13 +2,13 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, View, StatusBar, LogBox } from 'react-native';
 LogBox.ignoreLogs(['Reanimated 2']);
-import TabNavigation from './src/navigation/TabNavigation';
+import DrawerNavigation from './src/navigation/DrawerNavigation';
 
 const App = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle='default' />
-      <TabNavigation />
+      <DrawerNavigation />
     </View>
   );
 };
