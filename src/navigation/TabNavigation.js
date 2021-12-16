@@ -32,6 +32,7 @@ const TabNavigation = () => {
                     }
                 }}
             />
+
         </Tab.Navigator>
     );
 };

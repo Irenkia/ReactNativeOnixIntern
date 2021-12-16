@@ -1,31 +1,39 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Settings from '../screens/settings/Settings';
+import Basket from '../screens/basket/Basket';
 import TabNavigation from './TabNavigation';
 import Location from '../screens/location/Location';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
     return (
-        <NavigationContainer>
-            <Drawer.Navigator>
-                <Drawer.Screen
-                    name='Home'
-                    component={TabNavigation}
-                />
-                <Drawer.Screen
-                    name='Location'
-                    component={Location}
-                />
-                <Drawer.Screen
-                    name='Settings'
-                    component={Settings}
-                />
-            </Drawer.Navigator>
-        </NavigationContainer>
+        <SafeAreaProvider>
+
+            <NavigationContainer>
+                < Drawer.Navigator >
+                    <Drawer.Screen
+                        name='Home'
+                        component={TabNavigation}
+                    />
+                    <Drawer.Screen
+                        name='Location'
+                        component={Location}
+                    />
+                    <Drawer.Screen
+                        name='Basket'
+                        component={Basket}
+                    />
+                </Drawer.Navigator >
+            </NavigationContainer>
+
+        </SafeAreaProvider >
     );
 };
 
 export default DrawerNavigation;
+
+
+
