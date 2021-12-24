@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeCarsBasket } from '../../redux/Actions';
+import { removeCarsBasket } from '../../redux/actions';
 
 export default function Basket() {
 

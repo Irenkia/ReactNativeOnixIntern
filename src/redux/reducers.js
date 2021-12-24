@@ -1,7 +1,7 @@
 import {
     ADD_TO_CARS_BASKET_LIST,
     REMOVE_FROM_CARS_BASKET_LIST
-} from './Actions';
+} from './actions';
 
 const initialState = {
     carsBasket: []

@@ -3,19 +3,26 @@ import { View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
 import { styles } from './styles';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { LIST_CARS } from '../../constants/Constants';
+import { LIST_CARS } from '../../constants/constants';
+import { addCarsBasket } from '../../redux/actions';
 
-import { addCarsBasket } from '../../redux/Actions';
 
 const Home = ({ navigation }) => {
+
     const dispatch = useDispatch();
 
     const addToBasket = (car) => {
         dispatch(addCarsBasket(car));
     };
+
     return (
 
         <View style={styles.container}>
+
+            <View>
+                <Text style={styles.basket}>See the SectionsList in the settings</Text>
+            </View>
+
 
             <FlatList
                 data={LIST_CARS}
@@ -26,21 +33,25 @@ const Home = ({ navigation }) => {
                             <Image style={styles.img} source={{ uri: item.img }} />
                             <View>
                                 <TouchableOpacity onPress={() => navigation.navigate('Specifications', { item })}>
-                                    <Text style={styles.text}>{item.carBrand + ' ' + item.carModel}</Text>
+                                    <Text style={styles.item}>
+                                        {item.carBrand + ' ' + item.carModel}
+                                    </Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity onPress={() => addToBasket(item)}>
-                                    <Text>Add to basket</Text>
+                                    <Text style={styles.basket}>
+                                        Add to basket
+                                    </Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
                     );
                 }}
             />
+
         </View>
-
-
     );
 };
+
 export default Home;
 
 Home.propTypes = {
