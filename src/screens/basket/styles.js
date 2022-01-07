@@ -3,7 +3,10 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  viewTop: {flex: 1, paddingHorizontal: 16},
+  viewTop: {
+    flex: 1,
+    paddingHorizontal: 16,
+  },
   viewBottom: {flex: 1, marginTop: 8},
   textTop: {
     fontSize: 22,
