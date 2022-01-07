@@ -1,30 +1,33 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import React, {useContext} from 'react';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/Home/Home';
 import Specifications from '../screens/Specifications/Specifications';
-//import SecondHome from '../screens/Home/SecondHome';
+import {ThemeContext} from '../providers/ThemeProvider';
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
-    return (
-        <Stack.Navigator initialRouteName='Home'>
-            <Stack.Screen
-                name='Home'
-                component={Home}
-                options={{ headerShown: false }}
-            />
-            {/* <Stack.Screen
-                name='SecondHome'
-                component={SecondHome}
-                options={{ headerShown: false }}
-            /> */}
-            <Stack.Screen
-                name='Specifications'
-                component={Specifications}
-            />
-        </Stack.Navigator>
-    );
+  const {colors} = useContext(ThemeContext);
+
+  return (
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Specifications"
+        component={Specifications}
+        options={{
+          headerStyle: {
+            backgroundColor: colors.background,
+          },
+          headerTintColor: colors.text,
+        }}
+      />
+    </Stack.Navigator>
+  );
 };
 
 export default StackNavigation;
