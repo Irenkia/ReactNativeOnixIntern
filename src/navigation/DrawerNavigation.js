@@ -20,6 +20,10 @@ const DrawerNavigation = () => {
               width: '60%',
               backgroundColor: colors.background,
             },
+            headerStyle: {
+              backgroundColor: colors.background,
+            },
+            headerTintColor: colors.text,
             drawerInactiveTintColor: colors.text,
             drawerActiveTintColor: 'red',
             drawerType: 'slide',

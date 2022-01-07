@@ -4,8 +4,8 @@ import {StatusBar} from 'react-native';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: StatusBar.currentHeight,
-    marginHorizontal: 16,
+    // paddingTop: StatusBar.currentHeight,
+    // marginHorizontal: 16,
   },
   img: {
     width: 155,
@@ -20,9 +20,16 @@ export const styles = StyleSheet.create({
   },
   example: {
     fontSize: 15,
+    padding: 15,
   },
   text: {
     fontSize: 15,
+    padding: 10,
+  },
+  toggleWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginRight: 10,
   },
   item: {
     padding: 15,

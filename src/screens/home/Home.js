@@ -12,7 +12,6 @@ import PropTypes from 'prop-types';
 import {useDispatch} from 'react-redux';
 import {LIST_CARS} from '../../constants/constants';
 import {addCarsBasket} from '../../redux/actions';
-
 import {ThemeContext} from '../../providers/ThemeProvider';
 
 const Home = ({navigation}) => {
@@ -28,7 +27,7 @@ const Home = ({navigation}) => {
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <View isDark={isDark}>
+      <View isDark={isDark} style={styles.toggleWrapper}>
         <Text style={[styles.text, {color: colors.text}]}>
           {isDark ? 'Dark' : 'Light'}
           Mode

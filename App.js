@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React, {useContext} from 'react';
 //import React, { useEffect } from 'react';
 import {StyleSheet, View, StatusBar} from 'react-native';
 //import {StyleSheet, View, StatusBar, LogBox} from 'react-native';
@@ -9,9 +9,11 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 import {store, persistor} from './src/redux/store';
 import ThemeProvider from './src/providers/ThemeProvider';
+import {ThemeContext} from './src/providers/ThemeProvider';
 //import RNBootSplash from 'react-native-bootsplash';
 
 const App = () => {
+  const {isDark, colors} = useContext(ThemeContext);
   // useEffect(() => {
   //   setTimeout(() => {
   //     RNBootSplash.hide({ fade: true });
@@ -20,7 +22,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <View style={styles.container}>
-        <StatusBar barStyle="default" />
+        <StatusBar barStyle={'#000000'} />
         <PersistGate loading={null} persistor={persistor}>
           <ThemeProvider>
             <DrawerNavigation />
